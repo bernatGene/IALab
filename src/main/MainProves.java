@@ -26,7 +26,7 @@ public class MainProves {
         System.out.println( "\nGrups:" );
         AreaRescat.printaGrups();
 
-        area.solucioInicial1();
+        area.solucioInicial2();
         System.out.println( "\nRecorreguts:" );
         area.printaRescat();
     }

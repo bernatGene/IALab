@@ -83,7 +83,32 @@ public class AreaRescat {
     trajecte recollint el grup que venia a continuacio
      */
     public void solucioInicial2() {
+        int grupsRecollits = 0;
+        for (int i=0; i<numCentres*helisPerCentre; ++i) {
+            Helicopter hel = new Helicopter();
+            helicopters.add(hel);
+        }
+        int indexHelic = 0;
+        int indexGrup = 0;
+        int places = 15;
+        while (indexGrup < numGrups) {
+            int trajecte[] = {-1,-1,-1};
+            for (int i=0; i < 3 && indexGrup<numGrups; ++i) {
+                Grupo grup = grups.get( indexGrup );
+                if (places - grup.getNPersonas() >= 0) {
+                    places -= grup.getNPersonas();
+                    trajecte[i] = indexGrup;
+                    indexGrup++;
 
+                }
+                else i = 3;
+            }
+            Helicopter helicopter = helicopters.get( indexHelic );
+            helicopter.addTrajecte( trajecte );
+            places = 15;
+            indexHelic++;
+            if (indexHelic == numCentres*helisPerCentre) indexHelic = 0;
+        }
     }
 
     /*
@@ -168,10 +193,11 @@ public class AreaRescat {
     public static void printaGrups() {
         for (int i=0; i < numGrups; ++i ) {
             Grupo grup = grups.get( i );
-            int x, y;
+            int x, y, p;
             x = grup.getCoordX();
             y = grup.getCoordY();
-            System.out.println("Grup" +i+ ": x="+x+", y="+y );
+            p = grup.getNPersonas();
+            System.out.println("Grup" +i+ ": x="+x+", y="+y+" Persones:"+p);
         }
     }
 
