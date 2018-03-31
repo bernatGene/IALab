@@ -21,4 +21,12 @@ public class Helicopter {
     public void setTrajecteIndex(int index, int [] trajecte) {
         trajectes.set(index, trajecte);
     }
+
+    public void printaTrajecte() {
+        int n = trajectes.size();
+        for (int i =0; i< n; ++i) {
+            int trajecte[] = trajectes.get( i );
+            System.out.print("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"] "  );
+        }
+    }
 }
