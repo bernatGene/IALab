@@ -68,7 +68,7 @@ public class AreaRescat {
         Helicopter hel1 = new Helicopter();
         for (int i = 0; i < numGrups; ++i) {
             int [] trajecte = {i,-1,-1};
-            hel1.addTrajecte(trajecte);
+            hel1.addTrajecte(trajecte, 0);
         }
         helicopters.add(hel1);
         for (int i=1; i<numCentres*helisPerCentre; ++i) {
@@ -104,81 +104,12 @@ public class AreaRescat {
                 else i = 3;
             }
             Helicopter helicopter = helicopters.get( indexHelic );
-            helicopter.addTrajecte( trajecte );
+            helicopter.addTrajecte( trajecte, indexHelic );
             places = 15;
             indexHelic++;
             if (indexHelic == numCentres*helisPerCentre) indexHelic = 0;
         }
     }
-
-    /*
-    Igual que la solucio incial2 pero cada trajecte s'ordena per tal de minimitzar el temps.
-     */
-    public void solucioInicial3() {
-
-    }
-
-
-    /*
-    Donat una tripleta de grups (trajecte) i un centre, retorna la tripleta en lordre
-    tal que la distancia per enllacar es la minima
-     */
-    public int[] ordenaTrajecte(int [] antic, Centro centre) {
-        int [] nou1 = {antic[1],antic[2], antic[0]};
-        int [] nou2 = {antic[2],antic[0], antic[1]};
-        double dist0, dist1, dist2;
-        dist0 = distanciaRecorregut(antic, centre);
-        dist1 = distanciaRecorregut(nou1, centre);
-        dist2 = distanciaRecorregut(nou2, centre);
-        if (dist0 > dist1 && dist0 > dist2) return antic;
-        else if (dist1 > dist2) return nou1;
-        else return nou2;
-    }
-
-
-    /*
-    Donat una tripleta de grups i un centre, determina la distancia del recorregut
-     */
-    public double distanciaRecorregut(int [] recorregut, Centro centre) {
-        Grupo grup0, grup1, grup2;
-        int cx, cy, g0x, g0y, g1x, g1y, g2x, g2y;
-        cx = centre.getCoordX();
-        cy = centre.getCoordY();
-        if (recorregut[0] != -1)  {
-            grup0 = grups.get( recorregut[0] );
-            g0x = grup0.getCoordX();
-            g0y = grup0.getCoordY();
-        }
-        else {
-            g0x = cx;
-            g0y = cy;
-        }
-        if (recorregut[1] != -1)  {
-            grup1 = grups.get( recorregut[1] );
-            g1x = grup1.getCoordX();
-            g1y = grup1.getCoordY();
-        }
-        else {
-            g1x = g0x;
-            g1y = g0y;
-        }
-        if (recorregut[2] != -1)  {
-            grup2 = grups.get( recorregut[2] );
-            g2x = grup2.getCoordX();
-            g2y = grup2.getCoordY();
-        }
-        else {
-            g2x = g1x;
-            g2y = g1y;
-        }
-
-        double dist = 0;
-        dist += sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
-        dist += sqrt( pow(g0x-g1x, 2)+pow( g0y-g1y, 2 ) );
-        dist += sqrt( pow(g1x-g2x, 2)+pow( g1y-g2y, 2 ) );
-        return dist;
-    }
-
 
     public static void printaCentres() {
         for (int i=0; i < numCentres; ++i ) {
