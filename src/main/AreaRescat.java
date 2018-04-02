@@ -12,10 +12,10 @@ import static java.lang.Math.sqrt;
 import static java.lang.StrictMath.pow;
 
 public class AreaRescat {
-    private static int numGrups = 100;
-    private static int numCentres = 5;
-    private static int helisPerCentre = 1;
-    private static int seed = 2;
+    private static int numGrups;
+    private static int numCentres;
+    private static int helisPerCentre;
+    private static int seed;
     private static Grupos grups;
     private static Centros centres;
 
@@ -47,14 +47,21 @@ public class AreaRescat {
 
     /* Constructor */
 
-    public AreaRescat() {
+    public AreaRescat(AreaRescat area) {
+        numGrups = area.numGrups;
+        numCentres = area.numCentres;
+        helisPerCentre = area.helisPerCentre;
+        seed = area.seed;
+        grups = area.grups;
+        centres = area.centres;
+        helicopters = area.helicopters;
     }
 
-    public void inicializa() {
-        numGrups = 100;
-        numCentres = 5;
-        helisPerCentre = 1;
-        seed = 2;
+    public AreaRescat(int numGrups, int numCentres, int helisPerCentre, int seed) {
+        this.numGrups = numGrups;
+        this.numCentres = numCentres;
+        this.helisPerCentre = helisPerCentre;
+        this.seed = seed;
         grups = new Grupos( numGrups, seed );
         centres = new Centros( numCentres, helisPerCentre, seed );
         helicopters = new ArrayList<>( numCentres*helisPerCentre );
@@ -119,6 +126,29 @@ public class AreaRescat {
             y = centre.getCoordY();
             System.out.println("Centre" +i+ ": x="+x+", y="+y );
         }
+    }
+
+    public void swapTrajectes(idHeli1, idHeli2, indexTraj1, indexTraj2) {
+        int[] trajecte1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1);
+        int[] trajecte2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2);
+
+        helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
+        helicopters.get(idHeli1).addTrajecte(trajecte2);
+
+        helicopters.get(idHeli2).deleteTrajecteIndex(indexTraj2);
+        helicopters.get(idHeli2).addTrajecte(trajecte1);
+
+    }
+
+    public void swapGrups(idHeli, indexTraj1, indexTraj2, indexG1, indexG2) {
+
+    }
+
+    public void operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
+        int[] trajecte = helicopters.get(idHeli1).getTrajecteIndex(indexTraj);
+
+        helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
+        helicopters.get(idHeli2).addTrajecte(trajecte);
     }
 
     public static void printaGrups() {

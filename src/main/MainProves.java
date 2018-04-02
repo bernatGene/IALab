@@ -9,8 +9,12 @@ public class MainProves {
     public static void main(String[] args) {
 
         System.out.println( "Generant Area de Rescat" );
-        AreaRescat area = new AreaRescat();
-        area.inicializa();
+
+        int numGrups = 100;
+        int numCentres = 5;
+        int helisPerCentre = 1;
+        int seed = 2;
+        AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
 
         System.out.println( "printant Area de Rescat:" );
 
