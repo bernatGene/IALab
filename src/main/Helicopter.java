@@ -54,9 +54,9 @@ public class Helicopter {
         dist0 = distanciaRecorregut(antic, idCentre);
         dist1 = distanciaRecorregut(nou1, idCentre);
         dist2 = distanciaRecorregut(nou2, idCentre);
-        if (dist0 > dist1 && dist0 > dist2) return antic;
-        else if (dist1 > dist2) return nou1;
-        else return nou2;
+        if (dist1 > dist0 && dist1 > dist2) return nou1;
+        if (dist2 > dist0) return nou2;
+        else return antic;
     }
 
 
@@ -77,8 +77,7 @@ public class Helicopter {
             g0y = grup0.getCoordY();
         }
         else {
-            g0x = cx;
-            g0y = cy;
+            return -1;
         }
         if (recorregut[1] != -1)  {
             grup1 = grups.get( recorregut[1] );
@@ -86,8 +85,7 @@ public class Helicopter {
             g1y = grup1.getCoordY();
         }
         else {
-            g1x = g0x;
-            g1y = g0y;
+            return -1;
         }
         if (recorregut[2] != -1)  {
             grup2 = grups.get( recorregut[2] );
@@ -95,8 +93,7 @@ public class Helicopter {
             g2y = grup2.getCoordY();
         }
         else {
-            g2x = g1x;
-            g2y = g1y;
+            return -1;
         }
 
         double dist = 0;
