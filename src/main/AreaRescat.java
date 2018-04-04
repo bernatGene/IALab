@@ -123,7 +123,7 @@ public class AreaRescat {
         }
     }
 
-    public void swapTrajectes(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
+    public boolean swapTrajectes(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
         int[] trajecte1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1);
         int[] trajecte2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2);
 
@@ -132,7 +132,7 @@ public class AreaRescat {
 
         helicopters.get(idHeli2).deleteTrajecteIndex(indexTraj2);
         helicopters.get(idHeli2).setTrajecteIndex(indexTraj2, trajecte1);
-
+        return true;
     }
 
     public void mouTrajecte(int idHeli1, int idHeli2, int indexTraj) {

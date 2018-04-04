@@ -36,7 +36,9 @@ public class Helicopter {
     }
 
     public void setTrajecteIndex(int index, int [] trajecte) {
-        trajectes.set(index, trajecte);
+        int size = trajectes.size();
+        if (index >= size) trajectes.add(trajecte);
+        else trajectes.set(index, trajecte);
     }
 
     public void printaTrajecte(int idCentre) {

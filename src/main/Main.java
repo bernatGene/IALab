@@ -5,6 +5,9 @@ import aima.search.framework.Search;
 import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
@@ -12,14 +15,28 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        int numCentres, numGrups, seed, helisPerCentre;
-        numCentres = 5;
-        numGrups = 100;
-        seed = 1234;
-        helisPerCentre = 1;
-        AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        interficie();
+    }
 
-        AreaRescatHillClimbing( area );
+    private static void interficie() throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Area de Rescat:");
+        System.out.println("Opcions: 0=Execucio per defecte | 1=Modificar parametres");
+        String valor = br.readLine();
+        if (valor == "0") {
+            int numCentres, numGrups, seed, helisPerCentre;
+            numCentres = 5;
+            numGrups = 100;
+            seed = 1234;
+            helisPerCentre = 1;
+            AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+            area.solucioInicial2();
+            AreaRescatHillClimbing( area );
+        }
+        else {
+
+        }
+
 
     }
 

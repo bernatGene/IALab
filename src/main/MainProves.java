@@ -4,6 +4,9 @@ import IA.Desastres.Centro;
 import IA.Desastres.Centros;
 import IA.Desastres.Grupos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainProves {
 
     public static void main(String[] args) {
@@ -30,11 +33,21 @@ public class MainProves {
         System.out.println( "\nGrups:" );
         AreaRescat.printaGrups();
 
-        area.solucioInicial1();
+        area.solucioInicial2();
         System.out.println( "\nRecorreguts:" );
         area.printaRescat();
 
         double temps = RescatHeuristicFunction.tempsTotal( area );
         System.out.println("\nTemps total: "+temps );
+
+        System.out.println("\nEstats veins: els seus temps:");
+        RescatSuccesorFunction sf = new RescatSuccesorFunction();
+        ArrayList<AreaRescat> estats = sf.estatsSwapTrajectes(area);
+        for (int i=0; i<estats.size(); ++i) {
+            double tempsfill = RescatHeuristicFunction.tempsTotal(estats.get(i));
+            System.out.println("Fill "+i+" temps: "+tempsfill);
+            estats.get(i).printaRescat();
+            System.out.println("-----------");
+        }
     }
 }
