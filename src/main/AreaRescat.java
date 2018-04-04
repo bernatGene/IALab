@@ -45,17 +45,12 @@ public class AreaRescat {
         return centres;
     }
 
+    public ArrayList<Helicopter> getHelicopters() {
+        return helicopters;
+    }
+
     /* Constructor */
 
-    public AreaRescat(AreaRescat area) {
-        numGrups = area.numGrups;
-        numCentres = area.numCentres;
-        helisPerCentre = area.helisPerCentre;
-        seed = area.seed;
-        grups = area.grups;
-        centres = area.centres;
-        helicopters = area.helicopters;
-    }
 
     public AreaRescat(int numGrups, int numCentres, int helisPerCentre, int seed) {
         this.numGrups = numGrups;
@@ -65,6 +60,16 @@ public class AreaRescat {
         grups = new Grupos( numGrups, seed );
         centres = new Centros( numCentres, helisPerCentre, seed );
         helicopters = new ArrayList<>( numCentres*helisPerCentre );
+    }
+
+    public AreaRescat(AreaRescat area) {
+        numGrups = area.numGrups;
+        numCentres = area.numCentres;
+        helisPerCentre = area.helisPerCentre;
+        seed = area.seed;
+        grups = area.grups;
+        centres = area.centres;
+        this.helicopters = area.helicopters;
     }
 
     /*
