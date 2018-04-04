@@ -159,19 +159,21 @@ public class AreaRescat {
     public static void printaGrups() {
         for (int i=0; i < numGrups; ++i ) {
             Grupo grup = grups.get( i );
-            int x, y, p;
+            int x, y, p, pr;
             x = grup.getCoordX();
             y = grup.getCoordY();
             p = grup.getNPersonas();
-            System.out.println("Grup" +i+ ": x="+x+", y="+y+" Persones:"+p);
+            pr = grup.getPrioridad();
+            System.out.println("Grup" +i+ ": x="+x+", y="+y+" Persones:"+p+" Prioritat:"+pr);
         }
     }
 
     public void printaRescat() {
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
-            System.out.println( "Heli"+i+":" );
-            heli.printaTrajecte();
+            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
+            System.out.println( "Heli"+i+", temps="+tempsHeli+" :");
+            heli.printaTrajecte(i/helisPerCentre);
             System.out.println(  );
         }
     }

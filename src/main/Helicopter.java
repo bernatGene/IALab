@@ -18,6 +18,10 @@ public class Helicopter {
         trajectes = new ArrayList<>();
     }
 
+    public int size() {
+        return trajectes.size();
+    }
+
     public int[] getTrajecteIndex(int index) {
         return trajectes.get( index );
     }
@@ -35,11 +39,12 @@ public class Helicopter {
         trajectes.set(index, trajecte);
     }
 
-    public void printaTrajecte() {
+    public void printaTrajecte(int idCentre) {
         int n = trajectes.size();
         for (int i =0; i< n; ++i) {
             int trajecte[] = trajectes.get( i );
-            System.out.print("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"] "  );
+            int temps = (int) RescatHeuristicFunction.tempsTrajecte( trajecte, idCentre );
+            System.out.print("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"]"+temps+" " );
         }
     }
 
@@ -51,9 +56,9 @@ public class Helicopter {
         int [] nou1 = {antic[1],antic[2], antic[0]};
         int [] nou2 = {antic[2],antic[0], antic[1]};
         double dist0, dist1, dist2;
-        dist0 = distanciaRecorregut(antic, idCentre);
-        dist1 = distanciaRecorregut(nou1, idCentre);
-        dist2 = distanciaRecorregut(nou2, idCentre);
+        dist0 = distanciaTrajecte(antic, idCentre);
+        dist1 = distanciaTrajecte(nou1, idCentre);
+        dist2 = distanciaTrajecte(nou2, idCentre);
         if (dist1 > dist0 && dist1 > dist2) return nou1;
         if (dist2 > dist0) return nou2;
         else return antic;
@@ -61,45 +66,68 @@ public class Helicopter {
 
 
     /*
-    Donat una tripleta de grups i un centre, determina la distancia del recorregut
+    Donat una tripleta de grups i un centre, determina la distancia del trajecte
      */
-    public double distanciaRecorregut(int [] recorregut, int idCentre) {
+    public static double distanciaTrajecte(int [] trajecte, int idCentre) {
         Grupos grups = AreaRescat.getGrups();
         Centros centres = AreaRescat.getCentres();
         Centro centre = centres.get( idCentre );
         Grupo grup0, grup1, grup2;
         int cx, cy, g0x, g0y, g1x, g1y, g2x, g2y;
+        g0x = g0y = g1x =g1y =g2x =g2y = 0;
         cx = centre.getCoordX();
         cy = centre.getCoordY();
-        if (recorregut[0] != -1)  {
-            grup0 = grups.get( recorregut[0] );
+        if (trajecte[0] != -1)  {
+            grup0 = grups.get( trajecte[0] );
             g0x = grup0.getCoordX();
             g0y = grup0.getCoordY();
         }
-        else {
-            return -1;
-        }
-        if (recorregut[1] != -1)  {
-            grup1 = grups.get( recorregut[1] );
+        if (trajecte[1] != -1)  {
+            grup1 = grups.get( trajecte[1] );
             g1x = grup1.getCoordX();
             g1y = grup1.getCoordY();
         }
-        else {
-            return -1;
-        }
-        if (recorregut[2] != -1)  {
-            grup2 = grups.get( recorregut[2] );
+        if (trajecte[2] != -1)  {
+            grup2 = grups.get( trajecte[2] );
             g2x = grup2.getCoordX();
             g2y = grup2.getCoordY();
         }
+        double dist = 0.0;
+        if (trajecte[0] == -1 && trajecte[1] == -1 && trajecte[2] == -1) return 0;
+        else if (trajecte[1] == -1 && trajecte[2] == -1) {
+            dist += 2*sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
+        }
+        else if (trajecte[0] == -1 && trajecte[2] == -1) {
+            dist += 2*sqrt( pow(cx-g1x, 2)+pow( cy-g1y, 2 ) );
+        }
+        else if (trajecte[1] == -1 && trajecte[0] == -1) {
+            dist += 2*sqrt( pow(cx-g2x, 2)+pow( cy-g2y, 2 ) );
+        }
+        else if (trajecte[2] == -1) {
+            dist += sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
+            dist += sqrt( pow(g0x-g1x, 2)+pow( g0y-g1y, 2 ) );
+            dist += sqrt( pow(cx-g1x, 2)+pow( cy-g1y, 2 ) );
+
+        }
+        else if (trajecte[1] == -1) {
+            dist += sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
+            dist += sqrt( pow(g0x-g2x, 2)+pow( g0y-g2y, 2 ) );
+            dist += sqrt( pow(cx-g2x, 2)+pow( cy-g2y, 2 ) );
+
+        }
+        else if (trajecte[0] == -1) {
+            dist += sqrt( pow(cx-g1x, 2)+pow( cy-g1y, 2 ) );
+            dist += sqrt( pow(g1x-g2x, 2)+pow( g1y-g2y, 2 ) );
+            dist += sqrt( pow(cx-g2x, 2)+pow( cy-g2y, 2 ) );
+
+        }
         else {
-            return -1;
+            dist += sqrt( pow( cx - g0x, 2 ) + pow( cy - g0y, 2 ) );
+            dist += sqrt( pow( g0x - g1x, 2 ) + pow( g0y - g1y, 2 ) );
+            dist += sqrt( pow( g1x - g2x, 2 ) + pow( g1y - g2y, 2 ) );
+            dist += sqrt( pow( cx - g2x, 2 ) + pow( cy - g2y, 2 ) );
         }
 
-        double dist = 0;
-        dist += sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
-        dist += sqrt( pow(g0x-g1x, 2)+pow( g0y-g1y, 2 ) );
-        dist += sqrt( pow(g1x-g2x, 2)+pow( g1y-g2y, 2 ) );
         return dist;
     }
 }

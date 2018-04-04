@@ -13,7 +13,7 @@ public class MainProves {
         int numGrups = 100;
         int numCentres = 5;
         int helisPerCentre = 1;
-        int seed = 2;
+        int seed = 1234;
         AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
 
         System.out.println( "printant Area de Rescat:" );
@@ -30,8 +30,11 @@ public class MainProves {
         System.out.println( "\nGrups:" );
         AreaRescat.printaGrups();
 
-        area.solucioInicial2();
+        area.solucioInicial1();
         System.out.println( "\nRecorreguts:" );
         area.printaRescat();
+
+        double temps = RescatHeuristicFunction.tempsTotal( area );
+        System.out.println("\nTemps total: "+temps );
     }
 }

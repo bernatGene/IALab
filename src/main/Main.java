@@ -15,7 +15,7 @@ public class Main {
         int numCentres, numGrups, seed, helisPerCentre;
         numCentres = 5;
         numGrups = 100;
-        seed = 2;
+        seed = 1234;
         helisPerCentre = 1;
         AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
 
