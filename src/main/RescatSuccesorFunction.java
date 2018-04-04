@@ -17,6 +17,11 @@ public class RescatSuccesorFunction implements SuccessorFunction {
     }
 
 
+    /*
+    Descripcio: Genera tots els estats que es poden aconseguir a partir del donat (area)
+    canviant dos trajectes entre dos helicopters. El bulce i recorre lhelicopter 1, el bucle j lhelicopter2,
+    el bucle k els trajectes de lhelicopter 1 i el bucle l els del 2.
+     */
     public ArrayList<AreaRescat> estatsSwapTrajectes(AreaRescat area) {
         ArrayList estats = new ArrayList(  );
         ArrayList<Helicopter> helicopters = area.getHelicopters();

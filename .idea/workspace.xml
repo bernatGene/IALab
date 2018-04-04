@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="877464e2-0fe7-457e-9a61-d1b5458ba7a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IALab/main/AreaRescat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IALab/main/AreaRescat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IALab/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IALab/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IALab/main/MainProves.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IALab/main/MainProves.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IALab/main/RescatSuccesorFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IALab/main/RescatSuccesorFunction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AreaRescat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AreaRescat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Helicopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainProves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainProves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" afterDir="false" />
     </list>
@@ -27,7 +18,7 @@
       <file leaf-file-name="AreaRescat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="1843">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
             </state>
           </provider>
@@ -36,8 +27,8 @@
       <file leaf-file-name="RescatSuccesorFunction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="147">
+              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -45,8 +36,8 @@
       <file leaf-file-name="MainProves.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/MainProves.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+            <state relative-caret-position="704">
+              <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -54,8 +45,12 @@
       <file leaf-file-name="Helicopter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="-777">
+              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+              <folding>
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,8 +84,8 @@
         <option value="$PROJECT_DIR$/src/main/RescatHeuristicFunction.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/AreaRescat.java" />
-        <option value="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" />
         <option value="$PROJECT_DIR$/src/main/Helicopter.java" />
+        <option value="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" />
         <option value="$PROJECT_DIR$/src/main/MainProves.java" />
       </list>
     </option>
@@ -262,7 +257,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49628055" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.49628055" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19635417" />
@@ -309,6 +304,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -351,6 +350,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -393,6 +396,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding>
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -407,6 +414,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-777">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding>
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,29 +444,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="147">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="1843">
           <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainProves.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+        <state relative-caret-position="704">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
         </state>
       </provider>
     </entry>
