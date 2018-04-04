@@ -11,8 +11,23 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         ArrayList retval = new ArrayList();
         AreaRescat areaRescat = (AreaRescat) state;
 
+        retval.addAll( estatsSwapTrajectes( areaRescat ) );
 
         return retval;
+    }
+
+
+    private ArrayList<AreaRescat> estatsSwapTrajectes(AreaRescat area) {
+        ArrayList estats = new ArrayList(  );
+        ArrayList<Helicopter> helicopters = area.getHelicopters();
+
+        for (int i=0; i < helicopters.size(); ++i) {
+            for (int j=0; j < helicopters.size(); ++j){
+                AreaRescat newArea = operadorSwapTrajectes(area, i, j, 0,0);
+                estats.add(newArea);
+            }
+        }
+        return estats;
     }
 
 
