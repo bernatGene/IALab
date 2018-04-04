@@ -22,6 +22,10 @@ public class Helicopter {
         return trajectes.get( index );
     }
 
+    public void deleteTrajecteIndex(int index) {
+        trajectes.remove( index );
+    }
+
     public void addTrajecte(int [] trajecte, int idCentre) {
         int [] nou = ordenaTrajecte( trajecte, idCentre);
         trajectes.add(nou);

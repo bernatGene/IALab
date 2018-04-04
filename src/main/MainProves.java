@@ -9,16 +9,20 @@ public class MainProves {
     public static void main(String[] args) {
 
         System.out.println( "Generant Area de Rescat" );
-        AreaRescat area = new AreaRescat();
-        area.inicializa();
+
+        int numGrups = 100;
+        int numCentres = 5;
+        int helisPerCentre = 1;
+        int seed = 2;
+        AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
 
         System.out.println( "printant Area de Rescat:" );
 
         Centros centres = area.getCentres();
-        int numCentres = area.getNumCentres();
+        numCentres = area.getNumCentres();
         System.out.println( numCentres );
         Grupos grups = area.getGrups();
-        int numGrups = area.getNumGrups();
+        numGrups = area.getNumGrups();
 
         System.out.println( "Centres:" );
         AreaRescat.printaCentres();
