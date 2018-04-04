@@ -69,7 +69,11 @@ public class AreaRescat {
         seed = area.seed;
         grups = area.grups;
         centres = area.centres;
-        this.helicopters = area.helicopters;
+        this.helicopters = new ArrayList<>();
+        for (int i=0; i<area.helicopters.size(); ++i) {
+            Helicopter copiaHeli = new Helicopter(area.helicopters.get(i));
+            this.helicopters.add(copiaHeli);
+        }
     }
 
     /*

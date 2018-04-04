@@ -29,8 +29,9 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         for (int i=0; i < helicopters.size(); ++i) {
             for (int j=i+1; j < helicopters.size(); ++j){
                 for (int k=0; k < helicopters.get(i).size(); ++k) {
-                    for (int l=0; l < helicopters.get(j).size(); l++) {
+                    for (int l=0; l < helicopters.get(j).size(); ++l) {
                         AreaRescat newArea = operadorSwapTrajectes(area, i, j, k, l);
+                        System.out.println(i+" "+j+" "+k+" "+l+" ");
                         if (newArea != null) estats.add(newArea);
                     }
                 }
@@ -42,7 +43,7 @@ public class RescatSuccesorFunction implements SuccessorFunction {
     Donats dos helicopters i dos indexs de trajecte corresponents a cada un,
     retorna l'estat on els dos helicopters s'han intercanviat els trajectes.
      */
-    private AreaRescat operadorSwapTrajectes(AreaRescat area, int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
+    public AreaRescat operadorSwapTrajectes(AreaRescat area, int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
         AreaRescat newArea = new AreaRescat(area);
         if (newArea.swapTrajectes(idHeli1, idHeli2, indexTraj1, indexTraj2)) {
             return newArea;

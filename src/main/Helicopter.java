@@ -18,6 +18,13 @@ public class Helicopter {
         trajectes = new ArrayList<>();
     }
 
+    public Helicopter(Helicopter heli) {
+        this.trajectes = new ArrayList<>();
+        for (int i=0; i< heli.trajectes.size() ; ++i) {
+            this.trajectes.add(heli.trajectes.get(i).clone());
+        }
+    }
+
     public int size() {
         return trajectes.size();
     }
