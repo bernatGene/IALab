@@ -33,14 +33,12 @@ public class RescatSuccesorFunction implements SuccessorFunction {
 
 
     /*
-    FALTA IMPLEMENTAR:
-    idea: Donats dos helicopters i dos indexs de trajecte corresponents a cada un,
+    Donats dos helicopters i dos indexs de trajecte corresponents a cada un,
     retorna l'estat on els dos helicopters s'han intercanviat els trajectes.
      */
     private AreaRescat operadorSwapTrajectes(AreaRescat area, int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
         AreaRescat newArea = new AreaRescat(area);
         newArea.swapTrajectes(idHeli1, idHeli2, indexTraj1, indexTraj2);
-        //retVal.add(new Successor(new String("Canvi de trajacte entre helicopter " + idHeli1 + " i helicopter " + idHeli2);
         return newArea;
     }
 
@@ -57,13 +55,12 @@ public class RescatSuccesorFunction implements SuccessorFunction {
     }
 
     /*
-    FALTA IMPLEMENTAR:
-    idea: Donats dos helicopters i un index de trajecte del primer, retorna l'estat on el primer helicopter
+    Donats dos helicopters i un index de trajecte del primer, retorna l'estat on el primer helicopter
     on el trajecte el fa el segon helicopter enlloc del primer.
      */
     private AreaRescat operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
         AreaRescat newArea = new AreaRescat(area);
-        newArea.mouTrajecte(newArea, idHeli1, idHeli2, indexTraj);
+        newArea.mouTrajecte(idHeli1, idHeli2, indexTraj);
         return newArea;
     }
 
