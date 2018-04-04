@@ -19,10 +19,10 @@ public class MainProves {
         System.out.println( "printant Area de Rescat:" );
 
         Centros centres = area.getCentres();
-        int numCentres = area.getNumCentres();
+        numCentres = area.getNumCentres();
         System.out.println( numCentres );
         Grupos grups = area.getGrups();
-        int numGrups = area.getNumGrups();
+        numGrups = area.getNumGrups();
 
         System.out.println( "Centres:" );
         AreaRescat.printaCentres();

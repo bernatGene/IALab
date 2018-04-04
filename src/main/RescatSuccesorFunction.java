@@ -48,7 +48,7 @@ public class RescatSuccesorFunction implements SuccessorFunction {
      */
     private AreaRescat operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
         AreaRescat newArea = new AreaRescat(area);
-        newArea.mouTrajecte(idHeli1, idHeli2, indexTraj);
+        newArea.mouTrajecte(newArea, idHeli1, idHeli2, indexTraj);
         return newArea;
     }
 

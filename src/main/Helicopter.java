@@ -23,7 +23,7 @@ public class Helicopter {
     }
 
     public void deleteTrajecteIndex(int index) {
-        return trajectes.delete( index );
+        trajectes.remove( index );
     }
 
     public void addTrajecte(int [] trajecte, int idCentre) {

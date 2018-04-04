@@ -128,27 +128,27 @@ public class AreaRescat {
         }
     }
 
-    public void swapTrajectes(idHeli1, idHeli2, indexTraj1, indexTraj2) {
+    public void swapTrajectes(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
         int[] trajecte1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1);
         int[] trajecte2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2);
 
         helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
-        helicopters.get(idHeli1).addTrajecte(trajecte2);
+        helicopters.get(idHeli1).addTrajecte(trajecte2, idHeli1); // set
 
         helicopters.get(idHeli2).deleteTrajecteIndex(indexTraj2);
-        helicopters.get(idHeli2).addTrajecte(trajecte1);
+        helicopters.get(idHeli2).addTrajecte(trajecte1, idHeli2);
 
     }
 
-    public void swapGrups(idHeli, indexTraj1, indexTraj2, indexG1, indexG2) {
+    public void swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
 
     }
 
-    public void operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
+    public void mouTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
         int[] trajecte = helicopters.get(idHeli1).getTrajecteIndex(indexTraj);
 
-        helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
-        helicopters.get(idHeli2).addTrajecte(trajecte);
+        helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj);
+        helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2);
     }
 
     public static void printaGrups() {
@@ -170,5 +170,6 @@ public class AreaRescat {
             System.out.println(  );
         }
     }
+
 
 }
