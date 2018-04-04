@@ -142,7 +142,30 @@ public class AreaRescat {
         helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2);
     }
 
-    public void swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) { }
+    public void swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
+        int grup1 = helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1];
+        int grup2 = helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2];
+
+        helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1] = grup2;
+        helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2] = grup1;
+
+        if (calculaNumPassatgers(helicopters.get(idHeli).getTrajecteIndex(indexTraj1)) > 15 ||
+                calculaNumPassatgers(helicopters.get(idHeli).getTrajecteIndex(indexTraj2)) > 15 ) {
+            helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1] = grup1;
+            helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2] = grup2;
+        }
+
+        //falta mirar si el trajecte son tot -1
+    }
+
+    private int calculaNumPassatgers(int[] trajecte) {
+        int passatgers = 0;
+        for(int i = 0; i < 3; ++i) {
+            Grupo g = grups.get( trajecte[i] );
+            passatgers += g.getNPersonas();
+        }
+        return passatgers;
+    }
 
     public static void printaCentres() {
         for (int i=0; i < numCentres; ++i ) {
