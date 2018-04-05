@@ -19,23 +19,14 @@ public class Main {
     }
 
     private static void interficie() throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Area de Rescat:");
-        System.out.println("Opcions: 0=Execucio per defecte | 1=Modificar parametres");
-        String valor = br.readLine();
-        if (valor == "0") {
-            int numCentres, numGrups, seed, helisPerCentre;
-            numCentres = 5;
-            numGrups = 100;
-            seed = 1234;
-            helisPerCentre = 1;
-            AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
-            area.solucioInicial2();
-            AreaRescatHillClimbing( area );
-        }
-        else {
-
-        }
+        int numCentres, numGrups, seed, helisPerCentre;
+        numCentres = 5;
+        numGrups = 100;
+        seed = 1234;
+        helisPerCentre = 1;
+        AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial2();
+        AreaRescatHillClimbing( area );
 
 
     }
@@ -46,7 +37,7 @@ public class Main {
         Search search = new HillClimbingSearch();
         SearchAgent agent = new SearchAgent( problem, search);
 
-        System.out.println();
+        System.out.println("Processant");
         
         printActions(agent.getActions());
         printInstrumentation(agent.getInstrumentation());

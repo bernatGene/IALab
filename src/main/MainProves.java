@@ -48,12 +48,12 @@ public class MainProves {
         //novaArea.printaRescat();
 
 
-        ArrayList<AreaRescat> estats = sf.estatsSwapTrajectes(area);
+        /*ArrayList<AreaRescat> estats = sf.estatsSwapTrajectes(area);
         for (int i = 0; i < estats.size(); ++i) {
             double tempsfill = RescatHeuristicFunction.tempsTotal(estats.get(i));
             System.out.println("Fill " + i + " temps: " + tempsfill);
             estats.get(i).printaRescat();
             System.out.println("-----------");
-        }
+        }*/
     }
 }

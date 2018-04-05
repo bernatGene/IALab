@@ -1,5 +1,6 @@
 package main;
 
+import aima.search.framework.Successor;
 import aima.search.framework.SuccessorFunction;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class RescatSuccesorFunction implements SuccessorFunction {
     canviant dos trajectes entre dos helicopters. El bulce i recorre lhelicopter 1, el bucle j lhelicopter2,
     el bucle k els trajectes de lhelicopter 1 i el bucle l els del 2.
      */
-    public ArrayList<AreaRescat> estatsSwapTrajectes(AreaRescat area) {
+    public ArrayList<Successor> estatsSwapTrajectes(AreaRescat area) {
         ArrayList estats = new ArrayList(  );
         ArrayList<Helicopter> helicopters = area.getHelicopters();
 
@@ -31,8 +32,9 @@ public class RescatSuccesorFunction implements SuccessorFunction {
                 for (int k=0; k < helicopters.get(i).size(); ++k) {
                     for (int l=0; l < helicopters.get(j).size(); ++l) {
                         AreaRescat newArea = operadorSwapTrajectes(area, i, j, k, l);
-                        System.out.println(i+" "+j+" "+k+" "+l+" ");
-                        if (newArea != null) estats.add(newArea);
+                        String s = ("Canvio t"+k+" d'Heli"+i+" amb t"+l+" d'Heli"+j+"\n");
+                        s += newArea.printaRescatString();
+                        if (newArea != null) estats.add(new Successor(s,newArea));
                     }
                 }
             }

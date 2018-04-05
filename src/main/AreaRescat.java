@@ -203,5 +203,17 @@ public class AreaRescat {
         }
     }
 
+    public String printaRescatString() {
+        String S = "";
+        for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
+            Helicopter heli = helicopters.get(i);
+            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
+            S += ( "Heli"+i+", temps="+tempsHeli+" :\n");
+            S += heli.printaTrajecteString(i/helisPerCentre);
+            S += "\n";
+        }
+        return S;
+    }
+
 
 }

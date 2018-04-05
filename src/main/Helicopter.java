@@ -57,6 +57,17 @@ public class Helicopter {
         }
     }
 
+    public String printaTrajecteString(int idCentre) {
+        int n = trajectes.size();
+        String S = "";
+        for (int i =0; i< n; ++i) {
+            int trajecte[] = trajectes.get( i );
+            int temps = (int) RescatHeuristicFunction.tempsTrajecte( trajecte, idCentre );
+            S += ("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"]"+temps+" " );
+        }
+        return S;
+    }
+
     /*
    Donat una tripleta de grups (trajecte) i un centre, retorna la tripleta en lordre
    tal que la distancia per enllacar es la minima
