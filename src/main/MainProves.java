@@ -33,20 +33,20 @@ public class MainProves {
         System.out.println("\nGrups:");
         AreaRescat.printaGrups();
 
-        area.solucioInicial2();
+        area.solucioInicial3();
         System.out.println("\nRecorreguts:");
         area.printaRescat();
 
         double temps = RescatHeuristicFunction.tempsTotal(area);
         System.out.println("\nTemps total: " + temps);
 
-
+/*
         System.out.println("\nEstats veins: els seus temps:");
         RescatSuccesorFunction sf = new RescatSuccesorFunction();
         AreaRescat novaArea = sf.operadorSwapTrajectes(area,0,1,0,0);
 
         novaArea.printaRescat();
-
+*/
 
         /*ArrayList<AreaRescat> estats = sf.estatsSwapTrajectes(area);
         for (int i = 0; i < estats.size(); ++i) {
