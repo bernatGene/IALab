@@ -170,17 +170,17 @@ public class AreaRescat {
         helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2);
     }
 
-    public boolean swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
-        int grup1 = helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1];
-        int grup2 = helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2];
+    public boolean swapGrups(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
+        int grup1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1];
+        int grup2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2];
 
-        helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1] = grup2;
-        helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2] = grup1;
+        helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1] = grup2;
+        helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2] = grup1;
 
-        if (calculaNumPassatgers(helicopters.get(idHeli).getTrajecteIndex(indexTraj1)) > 15 ||
-                calculaNumPassatgers(helicopters.get(idHeli).getTrajecteIndex(indexTraj2)) > 15 ) {
-            helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1] = grup1;
-            helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2] = grup2;
+        if (calculaNumPassatgers(helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)) > 15 ||
+                calculaNumPassatgers(helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)) > 15 ) {
+            helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1] = grup1;
+            helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2] = grup2;
             return false;
         }
         return true;

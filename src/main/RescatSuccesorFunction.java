@@ -13,8 +13,10 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         AreaRescat areaRescat = (AreaRescat) state;
 
         retval.addAll( estatsSwapTrajectes( areaRescat ) );
-        retval.addAll( estatsMoureTrajecte( areaRescat ) );
+        //retval.addAll( estatsMoureTrajecte( areaRescat ) );
         retval.addAll( estatsSwapGrups( areaRescat ) );
+
+        //retval.addAll( estatsSwapGrups2( areaRescat ) );
 
         return retval;
     }
@@ -58,22 +60,50 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         else return null;
     }
 
-
     public ArrayList<Successor> estatsSwapGrups(AreaRescat area) {
         ArrayList estats = new ArrayList(  );
         ArrayList<Helicopter> helicopters = area.getHelicopters();
-        for (int i=0; i < helicopters.size(); ++i) {
-            Helicopter helicopter = helicopters.get( i );
-            for (int j=0; j<helicopter.size(); ++j) {
-                for(int k=j+1; k<helicopter.size(); ++k) {
-                    for(int l=0; l < 3; ++l) {
-                        for(int m=0; m < 3; ++m) {
-                            String S = "En l'Heli"+i+" canvio G"+l+" de T"+j+" amb G"+m+" de T"+k+ " ";
-                            AreaRescat newArea = operadorSwapGrups(area,i,j,k,l,m);
-                            if (newArea != null) {
-                                S += newArea.printaRescatString();
-                                AreaRescat.incSwpG();
-                                estats.add(new Successor( S, newArea ));
+            for (int i = 0; i < helicopters.size(); ++i) {
+                Helicopter helicopter = helicopters.get(i);
+                for (int j = 0; j < helicopter.size(); ++j) {
+                    for (int k = j + 1; k < helicopter.size(); ++k) {
+                        for (int l = 0; l < 3; ++l) {
+                            for (int m = 0; m < 3; ++m) {
+                                String S = "En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
+                                AreaRescat newArea = operadorSwapGrups(area, i, i, j, k, l, m);
+                                if (newArea != null) {
+                                    S += newArea.printaRescatString();
+                                    AreaRescat.incSwpG();
+                                    estats.add(new Successor(S, newArea));
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+
+        return estats;
+    }
+
+
+    public ArrayList<Successor> estatsSwapGrups2(AreaRescat area) {
+        ArrayList estats = new ArrayList(  );
+        ArrayList<Helicopter> helicopters = area.getHelicopters();
+        for(int n = 0; n < helicopters.size(); ++n) {
+            for (int i = 0; i < helicopters.size(); ++i) {
+                Helicopter helicopter = helicopters.get(i);
+                Helicopter helicopter2 = helicopters.get(n);
+                for (int j = 0; j < helicopter.size(); ++j) {
+                    for (int k = j + 1; k < helicopter2.size(); ++k) {
+                        for (int l = 0; l < 3; ++l) {
+                            for (int m = 0; m < 3; ++m) {
+                                String S = "En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
+                                AreaRescat newArea = operadorSwapGrups(area, n, i, j, k, l, m);
+                                if (newArea != null) {
+                                    S += newArea.printaRescatString();
+                                    AreaRescat.incSwpG();
+                                    estats.add(new Successor(S, newArea));
+                                }
                             }
                         }
                     }
@@ -81,16 +111,15 @@ public class RescatSuccesorFunction implements SuccessorFunction {
             }
         }
 
-
         return estats;
     }
     /*
     Donat un helicopter i dos indexs de trajectes seus i els indexs dels grups de cada trajecte,
     retorna l'estat on l'helicoper fa el trajecte 1 pero recollint el grup del trajecteG2 i viceversa
      */
-    private AreaRescat operadorSwapGrups(AreaRescat area, int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
+    private AreaRescat operadorSwapGrups(AreaRescat area, int idHeli1, int idHeli2, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
         AreaRescat newArea = new AreaRescat(area);
-        if (newArea.swapGrups(idHeli, indexTraj1, indexTraj2, indexG1, indexG2))
+        if (newArea.swapGrups(idHeli1, idHeli2, indexTraj1, indexTraj2, indexG1, indexG2))
             return newArea;
         else return null;
     }
