@@ -151,6 +151,48 @@ public class AreaRescat {
         }
     }
 
+
+    public void solucioInicial3() {
+
+        Helicopter hel = new Helicopter();
+
+        int posActual = 0;
+        int [] trajecteActual = {-1, -1, -1};
+        for (int i = 0; i < numGrups; ++i) {
+            if ( (calculaNumPassatgers(trajecteActual) < 15 - grups.get(i).getNPersonas()) && (posActual < 3) ) {
+                trajecteActual[posActual] = i;
+                posActual++;
+            } else {
+                hel.addTrajecte(trajecteActual, 0);
+                trajecteActual = new int [] {i, -1, -1};
+                posActual = 1;
+            }
+        }
+        helicopters.add(hel);
+        for (int i=1; i<numCentres*helisPerCentre; ++i) {
+            Helicopter hel2 = new Helicopter();
+            helicopters.add(hel2);
+        }
+
+    }
+
+    public boolean comprobar() {
+
+        int [] grupsVistos = new int[numGrups];
+        for (int i = 0; i < helicopters.size(); ++i) {
+            Helicopter hel = helicopters.get(i);
+            for (int j = 0; j < hel.size(); ++j) {
+                int[] trajecte = hel.getTrajecteIndex(j);
+                if (calculaNumPassatgers(trajecte) > 15) return false;
+                for (int k = 0; k < 3; ++k)
+                    if (trajecte[k] > 0) grupsVistos[trajecte[k]] = -1;
+            }
+        }
+        for (int i = 0; i < numGrups; ++i)
+            if (grupsVistos[i] != -1) return false;
+        return true;
+    }
+
     public boolean swapTrajectes(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2) {
         int[] trajecte1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1);
         int[] trajecte2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2);
@@ -220,12 +262,15 @@ public class AreaRescat {
     }
 
     public void printaRescat() {
+
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
             double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
             System.out.println( "Heli"+i+", temps="+tempsHeli+" :");
             heli.printaTrajecte(i/helisPerCentre);
             System.out.println(  );
+            if (!comprobar())
+                System.out.println("Error.");
         }
     }
 

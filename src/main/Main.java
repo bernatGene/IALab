@@ -49,10 +49,14 @@ public class Main {
             System.out.print("Helicopters per Centre?");
             helisPerCentre =  Integer.valueOf (br.readLine());
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
-            System.out.print("Solucio Inicial (1 | 2)?");
+            System.out.print("Solucio Inicial (1 | 2 | 3)?");
             int sol =  Integer.valueOf (br.readLine());
-            if (sol == 1) area.solucioInicial1();
-            else area.solucioInicial2();
+            if (sol == 1)
+                area.solucioInicial1();
+            else if (sol == 2)
+                area.solucioInicial2();
+            else
+                area.solucioInicial3();
             System.out.println( "Inici cronometre..." );
             long startTime = System.currentTimeMillis();
             AreaRescatHillClimbing( area );
