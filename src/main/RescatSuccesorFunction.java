@@ -35,8 +35,11 @@ public class RescatSuccesorFunction implements SuccessorFunction {
                     for (int l=0; l < helicopters.get(j).size(); ++l) {
                         AreaRescat newArea = operadorSwapTrajectes(area, i, j, k, l);
                         String s = ("Canvio t"+k+" d'Heli"+i+" amb t"+l+" d'Heli"+j+"\n");
-                        s += newArea.printaRescatString();
-                        if (newArea != null) estats.add(new Successor(s,newArea));
+                        if (newArea != null) {
+                            s += newArea.printaRescatString();
+                            AreaRescat.incSwpT();
+                            estats.add(new Successor(s,newArea));
+                        }
                     }
                 }
             }
@@ -65,10 +68,13 @@ public class RescatSuccesorFunction implements SuccessorFunction {
                 for(int k=j+1; k<helicopter.size(); ++k) {
                     for(int l=0; l < 3; ++l) {
                         for(int m=0; m < 3; ++m) {
-                            String S = "En l'Heli"+i+" canvio G"+l+" de T"+j+" amb G"+m+" de T"+k;
+                            String S = "En l'Heli"+i+" canvio G"+l+" de T"+j+" amb G"+m+" de T"+k+ " ";
                             AreaRescat newArea = operadorSwapGrups(area,i,j,k,l,m);
-                            S += newArea.printaRescatString();
-                            if (newArea != null) estats.add(new Successor( S, newArea ));
+                            if (newArea != null) {
+                                S += newArea.printaRescatString();
+                                AreaRescat.incSwpG();
+                                estats.add(new Successor( S, newArea ));
+                            }
                         }
                     }
                 }
@@ -84,8 +90,9 @@ public class RescatSuccesorFunction implements SuccessorFunction {
      */
     private AreaRescat operadorSwapGrups(AreaRescat area, int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
         AreaRescat newArea = new AreaRescat(area);
-        newArea.swapGrups(idHeli, indexTraj1, indexTraj2, indexG1, indexG2);
-        return newArea;
+        if (newArea.swapGrups(idHeli, indexTraj1, indexTraj2, indexG1, indexG2))
+            return newArea;
+        else return null;
     }
 
 
@@ -98,8 +105,11 @@ public class RescatSuccesorFunction implements SuccessorFunction {
                 for (int k=0; k < helicopters.get(i).size(); ++k) {
                     AreaRescat newArea = operadorMoureTrajecte(area, i, j, k);
                     String s = ("Moc t"+k+" d'Heli"+i+" a Heli"+j+"\n");
-                    s += newArea.printaRescatString();
-                    if (newArea != null) estats.add(new Successor(s,newArea));
+                    if (newArea != null) {
+                        s += newArea.printaRescatString();
+                        AreaRescat.incMouT();
+                        estats.add(new Successor(s,newArea));
+                    }
                 }
             }
         }

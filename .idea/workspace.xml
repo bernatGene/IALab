@@ -4,8 +4,7 @@
     <list default="true" id="6fd14972-ab95-4ec5-a7fd-8fd66d57d47a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AreaRescat.java" afterPath="$PROJECT_DIR$/src/main/AreaRescat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Helicopter.java" afterPath="$PROJECT_DIR$/src/main/Helicopter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainProves.java" afterPath="$PROJECT_DIR$/src/main/MainProves.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" afterPath="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,9 +20,18 @@
       <file leaf-file-name="AreaRescat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="215" column="39" lean-forward="false" selection-start-line="215" selection-start-column="39" selection-end-line="215" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="308">
+              <caret line="84" column="66" lean-forward="false" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
+              <folding>
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#711#712#0" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -31,18 +39,18 @@
       <file leaf-file-name="RescatHeuristicFunction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/RescatHeuristicFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="738">
               <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+            <state relative-caret-position="504">
+              <caret line="52" column="57" lean-forward="false" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -51,17 +59,17 @@
       <file leaf-file-name="MainProves.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainProves.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="720">
+              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helicopter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Helicopter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
+            <state relative-caret-position="882">
               <caret line="65" column="57" lean-forward="false" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
               <folding />
             </state>
@@ -71,8 +79,8 @@
       <file leaf-file-name="RescatSuccesorFunction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+            <state relative-caret-position="270">
+              <caret line="108" column="58" lean-forward="false" selection-start-line="108" selection-start-column="58" selection-end-line="108" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,22 +101,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/MainProves.java" />
+        <option value="$PROJECT_DIR$/src/main/Helicopter.java" />
         <option value="$PROJECT_DIR$/src/main/AreaRescat.java" />
         <option value="$PROJECT_DIR$/src/main/RescatSuccesorFunction.java" />
-        <option value="$PROJECT_DIR$/src/main/Helicopter.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="338" />
-    <option name="y" value="14" />
-    <option name="width" value="647" />
-    <option name="height" value="736" />
+    <option name="x" value="715" />
+    <option name="y" value="24" />
+    <option name="width" value="649" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -121,34 +129,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="IALab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IALab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IALab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IALab" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IALab" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IALab" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -307,7 +288,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="338" y="14" width="1303" height="780" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -316,9 +297,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6276276" sideWeight="0.50269026" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6696697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6276276" sideWeight="0.49730977" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -348,9 +329,77 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3474">
+          <caret line="215" column="39" lean-forward="false" selection-start-line="215" selection-start-column="39" selection-end-line="215" selection-end-column="39" />
+          <folding>
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/RescatHeuristicFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainProves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="65" column="57" lean-forward="false" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3384">
           <caret line="210" column="54" lean-forward="false" selection-start-line="210" selection-start-column="54" selection-end-line="210" selection-end-column="54" />
-          <folding />
+          <folding>
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -390,7 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -404,19 +452,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/AIMA.jar!/aima/search/informed/HillClimbingSearch.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/AIMA.jar!/aima/search/framework/NodeExpander.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -427,52 +466,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainProves.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="720">
+          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/RescatHeuristicFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="738">
           <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="215" column="39" lean-forward="false" selection-start-line="215" selection-start-column="39" selection-end-line="215" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Helicopter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="882">
           <caret line="65" column="57" lean-forward="false" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/AIMA.jar!/aima/search/framework/Successor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/AIMA.jar!/aima/search/informed/HillClimbingSearch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AreaRescat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="84" column="66" lean-forward="false" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
+          <folding>
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/RescatSuccesorFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="108" column="58" lean-forward="false" selection-start-line="108" selection-start-column="58" selection-end-line="108" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="52" column="57" lean-forward="false" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
           <folding />
         </state>
       </provider>

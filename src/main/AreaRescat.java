@@ -18,6 +18,30 @@ public class AreaRescat {
     private static int seed;
     private static Grupos grups;
     private static Centros centres;
+    private static int init = 0;
+    private static int swpT = 0;
+    private static int mouT = 0;
+    private static int swpG = 0;
+
+    public static void incInit() {
+        init++;
+    }
+
+    public static void incSwpT() {
+        swpT++;
+    }
+
+    public static void incMouT() {
+        mouT++;
+    }
+
+    public static void incSwpG() {
+        swpG++;
+    }
+
+    public static void printaUsOperadors() {
+        System.out.println("Operadors:\n init="+init+" swpT="+swpT+" mouT="+mouT+" swpG="+swpG);
+    }
 
     private ArrayList<Helicopter> helicopters;
 
@@ -160,7 +184,6 @@ public class AreaRescat {
             return false;
         }
         return true;
-        //falta mirar si el trajecte son tot -1
     }
 
     private int calculaNumPassatgers(int[] trajecte) {

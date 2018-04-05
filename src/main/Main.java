@@ -7,9 +7,11 @@ import aima.search.informed.HillClimbingSearch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 
 public class Main {
@@ -19,14 +21,40 @@ public class Main {
     }
 
     private static void interficie() throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in ));
+        System.out.print("\nCERCA LOCAL: Desastres\n Opcions: 0=Executar per defecte, 1=Canviar parametres");
+        String s = br.readLine();
         int numCentres, numGrups, seed, helisPerCentre;
-        numCentres = 5;
-        numGrups = 100;
-        seed = 1234;
-        helisPerCentre = 1;
-        AreaRescat area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
-        area.solucioInicial2();
-        AreaRescatHillClimbing( area );
+        if (Objects.equals( s, "0" )) {
+            numCentres = 5;
+            numGrups = 100;
+            seed = 1234;
+            helisPerCentre = 1;
+            AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
+            area.solucioInicial2();
+            System.out.println( "Climbing the hill..." );
+            AreaRescatHillClimbing( area );
+            AreaRescat.printaUsOperadors();
+        }
+        else {
+            System.out.print("Numero de centres?");
+            numCentres =  Integer.valueOf (br.readLine());
+            System.out.print("Numero de Grups?");
+            numGrups =  Integer.valueOf (br.readLine());
+            System.out.print("Llavor Aleatoria?");
+            seed =  Integer.valueOf (br.readLine());
+            System.out.print("Helicopters per Centre?");
+            helisPerCentre =  Integer.valueOf (br.readLine());
+            AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
+            System.out.print("Solucio Inicial (1 | 2)?");
+            int sol =  Integer.valueOf (br.readLine());
+            if (sol == 1) area.solucioInicial1();
+            else area.solucioInicial2();
+            System.out.println( "Climbing the hill..." );
+            AreaRescatHillClimbing( area );
+            AreaRescat.printaUsOperadors();
+        }
+
 
 
     }
