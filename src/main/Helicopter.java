@@ -62,8 +62,10 @@ public class Helicopter {
         String S = "";
         for (int i =0; i< n; ++i) {
             int trajecte[] = trajectes.get( i );
-            int temps = (int) RescatHeuristicFunction.tempsTrajecte( trajecte, idCentre );
-            S += ("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"]"+temps+" " );
+            //int temps = (int) RescatHeuristicFunction.tempsTrajecte( trajecte, idCentre );
+            if (trajecte[0] != -1 || trajecte[1] != -1 || trajecte[2] != -1) {
+                S += ("["+trajecte[0]+","+trajecte[1]+","+trajecte[2]+"]"+" " );
+            }
         }
         return S;
     }
@@ -113,7 +115,7 @@ public class Helicopter {
             g2y = grup2.getCoordY();
         }
         double dist = 0.0;
-        if (trajecte[0] == -1 && trajecte[1] == -1 && trajecte[2] == -1) return 0;
+        if (trajecte[0] == -1 && trajecte[1] == -1 && trajecte[2] == -1) return 0.0;
         else if (trajecte[1] == -1 && trajecte[2] == -1) {
             dist += 2*sqrt( pow(cx-g0x, 2)+pow( cy-g0y, 2 ) );
         }

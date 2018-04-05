@@ -43,9 +43,9 @@ public class MainProves {
 
         System.out.println("\nEstats veins: els seus temps:");
         RescatSuccesorFunction sf = new RescatSuccesorFunction();
-        //AreaRescat novaArea = sf.operadorSwapTrajectes(area,0,1,0,0);
+        AreaRescat novaArea = sf.operadorSwapTrajectes(area,0,1,0,0);
 
-        //novaArea.printaRescat();
+        novaArea.printaRescat();
 
 
         /*ArrayList<AreaRescat> estats = sf.estatsSwapTrajectes(area);

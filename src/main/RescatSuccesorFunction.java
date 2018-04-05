@@ -13,6 +13,8 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         AreaRescat areaRescat = (AreaRescat) state;
 
         retval.addAll( estatsSwapTrajectes( areaRescat ) );
+        retval.addAll( estatsMoureTrajecte( areaRescat ) );
+        retval.addAll( estatsSwapGrups( areaRescat ) );
 
         return retval;
     }
@@ -54,9 +56,30 @@ public class RescatSuccesorFunction implements SuccessorFunction {
     }
 
 
+    public ArrayList<Successor> estatsSwapGrups(AreaRescat area) {
+        ArrayList estats = new ArrayList(  );
+        ArrayList<Helicopter> helicopters = area.getHelicopters();
+        for (int i=0; i < helicopters.size(); ++i) {
+            Helicopter helicopter = helicopters.get( i );
+            for (int j=0; j<helicopter.size(); ++j) {
+                for(int k=j+1; k<helicopter.size(); ++k) {
+                    for(int l=0; l < 3; ++l) {
+                        for(int m=0; m < 3; ++m) {
+                            String S = "En l'Heli"+i+" canvio G"+l+" de T"+j+" amb G"+m+" de T"+k;
+                            AreaRescat newArea = operadorSwapGrups(area,i,j,k,l,m);
+                            S += newArea.printaRescatString();
+                            if (newArea != null) estats.add(new Successor( S, newArea ));
+                        }
+                    }
+                }
+            }
+        }
+
+
+        return estats;
+    }
     /*
-    FALTA IMPLEMENTAR:
-    idea: Donat un helicopter i dos indexs de trajectes seus i els indexs dels grups de cada trajecte,
+    Donat un helicopter i dos indexs de trajectes seus i els indexs dels grups de cada trajecte,
     retorna l'estat on l'helicoper fa el trajecte 1 pero recollint el grup del trajecteG2 i viceversa
      */
     private AreaRescat operadorSwapGrups(AreaRescat area, int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
@@ -65,11 +88,29 @@ public class RescatSuccesorFunction implements SuccessorFunction {
         return newArea;
     }
 
+
+    public ArrayList<Successor> estatsMoureTrajecte(AreaRescat area) {
+        ArrayList estats = new ArrayList(  );
+        ArrayList<Helicopter> helicopters = area.getHelicopters();
+
+        for (int i=0; i < helicopters.size(); ++i) {
+            for (int j=i+1; j < helicopters.size(); ++j){
+                for (int k=0; k < helicopters.get(i).size(); ++k) {
+                    AreaRescat newArea = operadorMoureTrajecte(area, i, j, k);
+                    String s = ("Moc t"+k+" d'Heli"+i+" a Heli"+j+"\n");
+                    s += newArea.printaRescatString();
+                    if (newArea != null) estats.add(new Successor(s,newArea));
+                }
+            }
+        }
+        return estats;
+    }
+
     /*
     Donats dos helicopters i un index de trajecte del primer, retorna l'estat on el primer helicopter
     on el trajecte el fa el segon helicopter enlloc del primer.
      */
-    private AreaRescat operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
+    public AreaRescat operadorMoureTrajecte(AreaRescat area, int idHeli1, int idHeli2, int indexTraj) {
         AreaRescat newArea = new AreaRescat(area);
         newArea.mouTrajecte(idHeli1, idHeli2, indexTraj);
         return newArea;

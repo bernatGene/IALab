@@ -131,10 +131,10 @@ public class AreaRescat {
         int[] trajecte1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1);
         int[] trajecte2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2);
 
-        helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
+        //helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj1);
         helicopters.get(idHeli1).setTrajecteIndex(indexTraj1, trajecte2);
 
-        helicopters.get(idHeli2).deleteTrajecteIndex(indexTraj2);
+        //helicopters.get(idHeli2).deleteTrajecteIndex(indexTraj2);
         helicopters.get(idHeli2).setTrajecteIndex(indexTraj2, trajecte1);
         return true;
     }
@@ -146,7 +146,7 @@ public class AreaRescat {
         helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2);
     }
 
-    public void swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
+    public boolean swapGrups(int idHeli, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
         int grup1 = helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1];
         int grup2 = helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2];
 
@@ -157,16 +157,19 @@ public class AreaRescat {
                 calculaNumPassatgers(helicopters.get(idHeli).getTrajecteIndex(indexTraj2)) > 15 ) {
             helicopters.get(idHeli).getTrajecteIndex(indexTraj1)[indexG1] = grup1;
             helicopters.get(idHeli).getTrajecteIndex(indexTraj2)[indexG2] = grup2;
+            return false;
         }
-
+        return true;
         //falta mirar si el trajecte son tot -1
     }
 
     private int calculaNumPassatgers(int[] trajecte) {
         int passatgers = 0;
-        for(int i = 0; i < 3; ++i) {
-            Grupo g = grups.get( trajecte[i] );
-            passatgers += g.getNPersonas();
+        for(int i = 0; i < 3 ; ++i) {
+            if (trajecte[i]!=-1) {
+                Grupo g = grups.get( trajecte[i] );
+                passatgers += g.getNPersonas();
+            }
         }
         return passatgers;
     }
@@ -204,7 +207,8 @@ public class AreaRescat {
     }
 
     public String printaRescatString() {
-        String S = "";
+        double t = RescatHeuristicFunction.tempsTotal( this );
+        String S = "Rescat, tempstotal = "+t+"\n";
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
             double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
