@@ -32,9 +32,12 @@ public class Main {
             helisPerCentre = 1;
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
             area.solucioInicial2();
-            System.out.println( "Climbing the hill..." );
+            System.out.println( "Inici cronometre..." );
+            long startTime = System.currentTimeMillis();
             AreaRescatHillClimbing( area );
+            long stopTime = System.currentTimeMillis();
             AreaRescat.printaUsOperadors();
+            System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
         }
         else {
             System.out.print("Numero de centres?");
@@ -50,9 +53,12 @@ public class Main {
             int sol =  Integer.valueOf (br.readLine());
             if (sol == 1) area.solucioInicial1();
             else area.solucioInicial2();
-            System.out.println( "Climbing the hill..." );
+            System.out.println( "Inici cronometre..." );
+            long startTime = System.currentTimeMillis();
             AreaRescatHillClimbing( area );
+            long stopTime = System.currentTimeMillis();
             AreaRescat.printaUsOperadors();
+            System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
         }
 
 
