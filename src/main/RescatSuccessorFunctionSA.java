@@ -42,7 +42,7 @@ public class RescatSuccessorFunctionSA implements SuccessorFunction {
             }
         }
         if (exc != -1) capTrajecte.add(exc);
-        if (numHelis-capTrajecte.size() < 2) {
+        if (numHelis-capTrajecte.size() < 1) {
             return -1;
         }
         return getRandomWithExclusion(rand, 0, numHelis, capTrajecte);
@@ -69,10 +69,11 @@ public class RescatSuccessorFunctionSA implements SuccessorFunction {
         ArrayList<Helicopter> helicopters = area.getHelicopters();
         int  idHeli1, idHeli2, indexTraj1;
         idHeli1 = idHelinoBuit(random, -1, helicopters);
-        idHeli2 = idHelinoBuit(random, idHeli1, helicopters);
-        if (idHeli2 == -1 ) {
+        if (idHeli1 == -1 ) {
             return successorAleatoriSwpG(area,random);
         }
+        ArrayList<Integer> exc = new ArrayList<>(); exc.add(idHeli1);
+        idHeli2 = getRandomWithExclusion(random,0,helicopters.size(),exc);
         indexTraj1 = random.nextInt(helicopters.get(idHeli1).size());
         String s = ("Moc t"+indexTraj1+" d'Heli"+idHeli1+" a Heli"+idHeli2+"\n");
         AreaRescat newArea = Operators.operadorMoureTrajecte(area, idHeli1, idHeli2, indexTraj1);
