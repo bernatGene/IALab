@@ -4,10 +4,10 @@ import aima.search.framework.Problem;
 import aima.search.framework.Search;
 import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
+import aima.search.informed.SimulatedAnnealingSearch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
@@ -20,8 +20,8 @@ public class Main {
         interficie();
     }
 
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in ));
     private static void interficie() throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in ));
         System.out.print("\nCERCA LOCAL: Desastres\n Opcions: 0=Executar per defecte, 1=Canviar parametres");
         String s = br.readLine();
         int numCentres, numGrups, seed, helisPerCentre;
@@ -48,6 +48,8 @@ public class Main {
             seed =  Integer.valueOf (br.readLine());
             System.out.print("Helicopters per Centre?");
             helisPerCentre =  Integer.valueOf (br.readLine());
+            System.out.print("Algorisme? (0=HC, 1=SA");
+            int alg =  Integer.valueOf (br.readLine());
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
             System.out.print("Solucio Inicial (1 | 2 | 3)?");
             int sol =  Integer.valueOf (br.readLine());
@@ -59,7 +61,10 @@ public class Main {
                 area.solucioInicial3();
             System.out.println( "Inici cronometre..." );
             long startTime = System.currentTimeMillis();
-            AreaRescatHillClimbing( area );
+            if (alg ==0) AreaRescatHillClimbing( area );
+            else {
+                AreaRescatSimulatedAnnealing(area);
+            }
             long stopTime = System.currentTimeMillis();
             AreaRescat.printaUsOperadors();
             System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
@@ -69,14 +74,32 @@ public class Main {
 
     }
 
+    private static void AreaRescatSimulatedAnnealing(AreaRescat area) throws Exception {
+        Problem problem = new Problem(area, new RescatSuccessorFunctionSA(), new RescatGoalTest(),
+                new RescatHeuristicFunction());
+        int nIter, IpS, k;
+        double l;
+        System.out.print("SA: Nombre maxim d'iteracions?");
+        nIter = Integer.valueOf(br.readLine());
+        System.out.print("SA: Iteracions per pas de Tº?");
+        IpS = Integer.valueOf(br.readLine());
+        System.out.print("SA: Parametre k?");
+        k = Integer.valueOf(br.readLine());
+        System.out.print("SA: Parametre lambda?");
+        l = Double.valueOf(br.readLine());
+
+
+        Search search = new SimulatedAnnealingSearch(nIter, IpS, k, l);
+        SearchAgent agent = new SearchAgent(problem, search);
+        printActions(agent.getActions());
+        printInstrumentation(agent.getInstrumentation());
+    }
+
     private static void AreaRescatHillClimbing(AreaRescat area) throws Exception {
-        Problem problem = new Problem( area, new RescatSuccesorFunction(), new RescatGoalTest(),
+        Problem problem = new Problem( area, new RescatSuccessorFunction(), new RescatGoalTest(),
                 new RescatHeuristicFunction() );
         Search search = new HillClimbingSearch();
         SearchAgent agent = new SearchAgent( problem, search);
-
-        System.out.println("Processant");
-        
         printActions(agent.getActions());
         printInstrumentation(agent.getInstrumentation());
     }
