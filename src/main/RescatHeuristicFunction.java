@@ -51,7 +51,8 @@ public class RescatHeuristicFunction implements HeuristicFunction {
         for (int j=0; j<3; ++j) {
             if (trajecte[j] != -1) {
                 Grupo grup = grups.get( trajecte[j] );
-                temps += grup.getNPersonas() * grup.getPrioridad();
+                if (grup.getPrioridad() == 1) temps += grup.getNPersonas()*2;
+                else temps += grup.getNPersonas();
             }
         }
         return temps;
