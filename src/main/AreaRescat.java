@@ -168,6 +168,7 @@ public class AreaRescat {
                 posActual = 1;
             }
         }
+        hel.addTrajecte(trajecteActual, 0);
         helicopters.add(hel);
         for (int i=1; i<numCentres*helisPerCentre; ++i) {
             Helicopter hel2 = new Helicopter();
@@ -183,13 +184,19 @@ public class AreaRescat {
             Helicopter hel = helicopters.get(i);
             for (int j = 0; j < hel.size(); ++j) {
                 int[] trajecte = hel.getTrajecteIndex(j);
-                if (calculaNumPassatgers(trajecte) > 15) return false;
+                if (calculaNumPassatgers(trajecte) > 15) {
+                    System.out.println("Passatges accedits a"+trajecte);
+                    return false;
+                }
                 for (int k = 0; k < 3; ++k)
-                    if (trajecte[k] > 0) grupsVistos[trajecte[k]] = -1;
+                    if (trajecte[k] >= 0) grupsVistos[trajecte[k]] = -1;
             }
         }
         for (int i = 0; i < numGrups; ++i)
-            if (grupsVistos[i] != -1) return false;
+            if (grupsVistos[i] != -1) {
+                System.out.println("Falta grup "+i);
+                return false;
+            }
         return true;
     }
 
@@ -284,6 +291,7 @@ public class AreaRescat {
             S += heli.printaTrajecteString(i/helisPerCentre);
             S += "\n";
         }
+        if(!comprobar()) S+= "ERRoR";
         return S;
     }
 

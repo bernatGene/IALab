@@ -6,6 +6,7 @@ import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
 import aima.search.informed.SimulatedAnnealingSearch;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,7 +32,7 @@ public class Main {
             seed = 1234;
             helisPerCentre = 1;
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
-            area.solucioInicial2();
+            area.solucioInicial3();
             System.out.println( "Inici cronometre..." );
             long startTime = System.currentTimeMillis();
             AreaRescatHillClimbing( area );
@@ -90,8 +91,9 @@ public class Main {
 
 
         Search search = new SimulatedAnnealingSearch(nIter, IpS, k, l);
+        //((SimulatedAnnealingSearch) search).traceOn();
         SearchAgent agent = new SearchAgent(problem, search);
-        printActions(agent.getActions());
+        printActionsSA(agent.getActions());
         printInstrumentation(agent.getInstrumentation());
     }
 
@@ -106,8 +108,14 @@ public class Main {
 
     private static void printActions(List actions) {
         for (int i = 0; i < actions.size(); i++) {
-            String action = (String) actions.get(i);
-            System.out.println(action);
+            System.out.println((String) actions.get(i));
+        }
+    }
+
+    private static void printActionsSA(List actions) {
+        for (int i = 0; i < actions.size(); i++) {
+            String s = ((AreaRescat) actions.get(i)).printaRescatString();
+            System.out.println(s);
         }
     }
 
