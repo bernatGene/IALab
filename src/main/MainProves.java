@@ -33,7 +33,7 @@ public class MainProves {
         System.out.println("\nGrups:");
         AreaRescat.printaGrups();
 
-        area.solucioInicial3();
+        area.solucioInicial1();
         System.out.println("\nRecorreguts:");
         area.printaRescat();
 

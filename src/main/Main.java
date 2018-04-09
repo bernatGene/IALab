@@ -49,7 +49,10 @@ public class Main {
             seed =  Integer.valueOf (br.readLine());
             System.out.print("Helicopters per Centre?");
             helisPerCentre =  Integer.valueOf (br.readLine());
-            System.out.print("Algorisme? (0=HC, 1=SA");
+            System.out.print("Heuristic? (1 | 2)");
+            int heu =  Integer.valueOf (br.readLine());
+            RescatHeuristicFunction.setHeuristic2(heu==2);
+            System.out.print("Algorisme? (0=HC, 1=SA)");
             int alg =  Integer.valueOf (br.readLine());
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
             System.out.print("Solucio Inicial (1 | 2 | 3)?");

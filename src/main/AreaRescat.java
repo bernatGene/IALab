@@ -144,7 +144,7 @@ public class AreaRescat {
                 else i = 3;
             }
             Helicopter helicopter = helicopters.get( indexHelic );
-            helicopter.addTrajecte( trajecte, indexHelic );
+            helicopter.addTrajecte( trajecte, indexHelic/helisPerCentre );
             places = 15;
             indexHelic++;
             if (indexHelic == numCentres*helisPerCentre) indexHelic = 0;
@@ -216,7 +216,7 @@ public class AreaRescat {
         int[] trajecte = helicopters.get(idHeli1).getTrajecteIndex(indexTraj);
 
         helicopters.get(idHeli1).deleteTrajecteIndex(indexTraj);
-        helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2);
+        helicopters.get(idHeli2).addTrajecte(trajecte, idHeli2/helisPerCentre);
     }
 
     public boolean swapGrups(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
@@ -272,7 +272,7 @@ public class AreaRescat {
 
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
-            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
+            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre )[0];
             System.out.println( "Heli"+i+", temps="+tempsHeli+" :");
             heli.printaTrajecte(i/helisPerCentre);
             System.out.println(  );
@@ -286,7 +286,7 @@ public class AreaRescat {
         String S = "Rescat, tempstotal = "+t+"\n";
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
-            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre );
+            double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre )[0];
             S += ( "Heli"+i+", temps="+tempsHeli+" :\n");
             S += heli.printaTrajecteString(i/helisPerCentre);
             S += "\n";
