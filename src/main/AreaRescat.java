@@ -226,10 +226,21 @@ public class AreaRescat {
         helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1] = grup2;
         helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2] = grup1;
 
-        if (calculaNumPassatgers(helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)) > 15 ||
-                calculaNumPassatgers(helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)) > 15 ) {
-            helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1] = grup1;
-            helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2] = grup2;
+        return true;
+    }
+
+    public boolean canSwap(int idHeli1, int idHeli2, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
+
+        int grup1 = helicopters.get(idHeli1).getTrajecteIndex(indexTraj1)[indexG1];
+        int grup2 = helicopters.get(idHeli2).getTrajecteIndex(indexTraj2)[indexG2];
+        int nPgrup1 =0;
+        int nPgrup2 =0;
+        if (grup1 == grup2) return false;
+        if (grup1 != -1) nPgrup1 = grups.get( grup1 ).getNPersonas();
+        if (grup2 != -1) nPgrup2 = grups.get( grup2 ).getNPersonas();
+
+        if (calculaNumPassatgers(helicopters.get(idHeli1).getTrajecteIndex(indexTraj1))-nPgrup1+nPgrup2 > 15 ||
+                calculaNumPassatgers(helicopters.get(idHeli2).getTrajecteIndex(indexTraj2))-nPgrup2+nPgrup1 > 15 ) {
             return false;
         }
         return true;

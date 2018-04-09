@@ -102,10 +102,12 @@ public class Operators {
     retorna l'estat on l'helicoper fa el trajecte 1 pero recollint el grup del trajecteG2 i viceversa
      */
     public static AreaRescat operadorSwapGrups(AreaRescat area, int idHeli1, int idHeli2, int indexTraj1, int indexTraj2, int indexG1, int indexG2) {
-        AreaRescat newArea = new AreaRescat(area);
-        if (newArea.swapGrups(idHeli1, idHeli2, indexTraj1, indexTraj2, indexG1, indexG2))
+        if (area.canSwap( idHeli1,idHeli2,indexTraj1,indexTraj2,indexG1,indexG2 )) {
+            AreaRescat newArea = new AreaRescat(area);
+            newArea.swapGrups(idHeli1, idHeli2, indexTraj1, indexTraj2, indexG1, indexG2);
             return newArea;
-        else return null;
+        }
+        return null;
     }
 
 
