@@ -307,4 +307,11 @@ public class AreaRescat {
     }
 
 
+    public String printaTempString() {
+        double t = RescatHeuristicFunction.tempsTotal( this );
+        String S = String.valueOf(t);
+        if(!comprobar()) S+= "ERRoR";
+        return S;
+    }
+
 }
