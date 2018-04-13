@@ -44,12 +44,18 @@ public class RescatHeuristicFunction implements HeuristicFunction {
     public static double[] tempsHelicopter(Helicopter helicopter, AreaRescat area, int centre) {
         double temps = 0.0;
         double tempsP1 = 0.0;
-        for (int i=0; i < helicopter.size(); ++i) {
+        int size = helicopter.size();
+        for (int i=0; i < size; ++i) {
             int [] trajecte = helicopter.getTrajecteIndex( i );
             double tempsTrajecte = tempsTrajecte(trajecte, centre );
             if (tempsTrajecte != 0) {
                 temps += tempsTrajecte;
                 if (i != helicopter.size()-1) temps+=10;
+            }
+            else {
+                helicopter.deleteTrajecteIndex(i);
+                size--;
+                i--;
             }
             boolean P1 = false;
             for (int j=0; j<3; ++j) {
@@ -58,7 +64,7 @@ public class RescatHeuristicFunction implements HeuristicFunction {
                     if (grup.getPrioridad() == 1) P1 = true;
                 }
             }
-            tempsP1 += tempsTrajecte;
+            if (P1) tempsP1 += tempsTrajecte;
 
         }
 
