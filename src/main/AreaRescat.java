@@ -295,13 +295,17 @@ public class AreaRescat {
     public String printaRescatString() {
         double t = RescatHeuristicFunction.tempsTotal( this );
         String S = "Rescat, tempstotal = "+t+"\n";
+        double tempsCrit1 = 0;
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
             double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre )[0];
-            S += ( "Heli"+i+", temps="+tempsHeli+" :\n");
+            tempsCrit1 += tempsHeli;
+            int cardinalitat = heli.size();
+            S += ( "Heli"+i+", traj="+cardinalitat+", temps="+tempsHeli+" :\n");
             S += heli.printaTrajecteString(i/helisPerCentre);
             S += "\n";
         }
+        S+="temps Crit1="+tempsCrit1;
         if(!comprobar()) S+= "ERRoR";
         return S;
     }
