@@ -27,11 +27,12 @@ public class MainExp6 {
         System.out.println("-HILL CLIMBING EXPERIMENT 6-");
         System.out.println("------------------------------------------------");
 
-        helisPerCentre = 1;
-        numCentres = 10;
-        numGrups = 100;
+        numGrups = 250;
 
         for (int k = 1; k <= 5; ++k) {
+
+            numCentres = 5*k;
+            helisPerCentre = 1;
 
             System.out.println("------------------------------------------------");
             System.out.println("#Centres #Grups #Helis/Centre");
@@ -45,16 +46,9 @@ public class MainExp6 {
             stopTime = System.currentTimeMillis();
             System.out.println("Temp: " + (stopTime - startTime));
 
-            numGrups = numGrups + 50;
-        }
+            numCentres = numCentres/k;
+            helisPerCentre = k;
 
-        helisPerCentre = 2;
-        numCentres = 5;
-        numGrups = 100;
-
-        for (int k = 1; k <= 5; ++k) {
-
-            System.out.println("------------------------------------------------");
             System.out.println("#Centres #Grups #Helis/Centre");
             System.out.println(numCentres + " " + numGrups + " " + helisPerCentre);
 
@@ -62,11 +56,10 @@ public class MainExp6 {
             area.solucioInicial3();
 
             startTime = System.currentTimeMillis();
-            AreaRescatHillClimbing(area);
+           AreaRescatHillClimbing(area);
             stopTime = System.currentTimeMillis();
             System.out.println("Temp: " + (stopTime - startTime));
 
-            numGrups = numGrups + 50;
         }
 
         System.out.println("------------------------------------------------");
