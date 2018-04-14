@@ -8,7 +8,7 @@ import aima.search.informed.SimulatedAnnealingSearch;
 
 import java.util.List;
 
-public class MainExp4 {
+public class MainExp7 {
 
     public static void main(String[] args) throws Exception {
         interficie();
@@ -24,33 +24,15 @@ public class MainExp4 {
 
         long startTime;
         long stopTime;
-        /*for (int k=1; k <= 4; ++k) {
-
-
-            numCentres = k * 5;
-            numGrups = k * 100;
-
-            System.out.println("------------------------------------------------");
-            System.out.println("#Centres #Grups");
-            System.out.println(numCentres + " " + numGrups);
-            System.out.println("------------------------------------------------");
-            System.out.println("-HILL CLIMBING-");
-            System.out.println("------------------------------------------------");
-
-            area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
-            area.solucioInicial3();
-
-            startTime = System.currentTimeMillis();
-            AreaRescatHillClimbing(area);
-            stopTime = System.currentTimeMillis();
-            System.out.println(stopTime - startTime);
-
-
-        }*/
         System.out.println("------------------------------------------------");
         System.out.println("-SIMULATED ANNEALING-");
         System.out.println("------------------------------------------------");
 
+
+
+
+
+        
         long accumulator = 0;
         for (int k = 1; k <= 25; ++k) {
 
