@@ -295,7 +295,7 @@ public class AreaRescat {
     public String printaRescatString() {
         double t = RescatHeuristicFunction.tempsTotal( this );
         String S = "Rescat, tempstotal = "+t+"\n";
-        double tempsCrit1 = 0;
+        /*double tempsCrit1 = 0;
         for (int i=0; i < (numCentres*helisPerCentre); ++i ) {
             Helicopter heli = helicopters.get(i);
             double tempsHeli = RescatHeuristicFunction.tempsHelicopter( heli, this, i/helisPerCentre )[0];
@@ -306,7 +306,7 @@ public class AreaRescat {
             S += "\n";
         }
         S+="temps Crit1="+tempsCrit1;
-        if(!comprobar()) S+= "ERRoR";
+        if(!comprobar()) S+= "ERRoR";*/
         return S;
     }
 

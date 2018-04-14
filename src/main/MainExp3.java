@@ -7,7 +7,7 @@ import aima.search.informed.SimulatedAnnealingSearch;
 
 import java.util.List;
 
-public class MainSA {
+public class MainExp3 {
 
     public static void main(String[] args) throws Exception {
         interficie();
