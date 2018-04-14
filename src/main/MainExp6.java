@@ -5,7 +5,7 @@ import aima.search.framework.Search;
 import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
 
-public class MainExp5 {
+public class MainExp6 {
 
     public static void main(String[] args) throws Exception {
         interficie();
@@ -15,7 +15,7 @@ public class MainExp5 {
         int numCentres;
         int numGrups;
         int seed = 1234;
-        int helisPerCentre = 1;
+        int helisPerCentre;
         AreaRescat area;
         RescatHeuristicFunction.setHeuristic2(false);
 
@@ -24,17 +24,39 @@ public class MainExp5 {
 
 
         System.out.println("------------------------------------------------");
-        System.out.println("-HILL CLIMBING EXPERIMENT 5.1-");
+        System.out.println("-HILL CLIMBING EXPERIMENT 6-");
         System.out.println("------------------------------------------------");
 
+        helisPerCentre = 1;
+        numCentres = 10;
+        numGrups = 100;
+
+        for (int k = 1; k <= 5; ++k) {
+
+            System.out.println("------------------------------------------------");
+            System.out.println("#Centres #Grups #Helis/Centre");
+            System.out.println(numCentres + " " + numGrups + " " + helisPerCentre);
+
+            area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+            area.solucioInicial3();
+
+            startTime = System.currentTimeMillis();
+            AreaRescatHillClimbing(area);
+            stopTime = System.currentTimeMillis();
+            System.out.println("Temp: " + (stopTime - startTime));
+
+            numGrups = numGrups + 50;
+        }
+
+        helisPerCentre = 2;
         numCentres = 5;
         numGrups = 100;
 
-        for (int k = 1; k <= 10; ++k) {
+        for (int k = 1; k <= 5; ++k) {
 
             System.out.println("------------------------------------------------");
-            System.out.println("#Centres #Grups");
-            System.out.println(numCentres + " " + numGrups);
+            System.out.println("#Centres #Grups #Helis/Centre");
+            System.out.println(numCentres + " " + numGrups + " " + helisPerCentre);
 
             area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
             area.solucioInicial3();
@@ -48,34 +70,7 @@ public class MainExp5 {
         }
 
         System.out.println("------------------------------------------------");
-        System.out.println("END EXP 5.1");
-        System.out.println("------------------------------------------------");
-        System.out.println("-HILL CLIMBING EXPERIMENT 5.2-");
-        System.out.println("------------------------------------------------");
-
-        numCentres = 5;
-        numGrups = 100;
-
-        for (int k = 1; k <= 25; ++k) {
-
-            System.out.println("------------------------------------------------");
-            System.out.println("#Centres #Grups");
-            System.out.println(numCentres + " " + numGrups);
-
-            area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
-            area.solucioInicial3();
-
-            startTime = System.currentTimeMillis();
-            AreaRescatHillClimbing(area);
-            stopTime = System.currentTimeMillis();
-            System.out.println("Temp: " + (stopTime - startTime));
-
-            numCentres = numCentres + 5;
-        }
-
-        System.out.println("------------------------------------------------");
-        System.out.println("END EXP 5.2");
-
+        System.out.println("END EXP 6");
 
 
     }
