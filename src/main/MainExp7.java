@@ -17,42 +17,98 @@ public class MainExp7 {
     private static void interficie() throws Exception {
         int numCentres;
         int numGrups;
-        int seed = 1234;
         int helisPerCentre = 1;
         AreaRescat area;
         RescatHeuristicFunction.setHeuristic2(false);
-
-        long startTime;
-        long stopTime;
         System.out.println("------------------------------------------------");
         System.out.println("-SIMULATED ANNEALING-");
         System.out.println("------------------------------------------------");
+        numCentres = 5;
+        numGrups = 100;
 
+        int seed;
 
+        /*seed = 1234;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
+        seed = 1111;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
+        seed = 2222;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
+        seed = 3333;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
+        seed = 4444;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
+        */
 
-
-
-        
-        long accumulator = 0;
-        for (int k = 1; k <= 25; ++k) {
-
-            numCentres = k * 5;
-            numGrups = k * 100;
-
-            for (int j = 0; j < 3; j++) {
-                area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
-                area.solucioInicial3();
-
-                startTime = System.currentTimeMillis();
-                AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
-                stopTime = System.currentTimeMillis();
-
-                accumulator = accumulator + stopTime - startTime;
-
-            }
-            System.out.print(accumulator/30 + ",");
-            accumulator = 0;
+        seed = 1234;
+        RescatHeuristicFunction.setHeuristic2(true);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        RescatHeuristicFunction.setPonderation(1);
+        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        System.out.println("------------------------------------------------");
+        for (int k=1; k < 10; ++k) {
+            RescatHeuristicFunction.setHeuristic2(true);
+            area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+            area.solucioInicial3();
+            RescatHeuristicFunction.setPonderation(k*2);
+            AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+            System.out.println("------------------------------------------------");
         }
+
+
+
+
         System.out.println("------------------------------------------------");
         System.out.println("END");
     }
@@ -68,7 +124,7 @@ public class MainExp7 {
 
     private static void printActionsSA(List actions) {
         for (int i = 0; i < actions.size(); i++) {
-            String s = ((AreaRescat) actions.get(i)).printaTempString();
+            String s = ((AreaRescat) actions.get(i)).printaRescatString();
             System.out.println(s);
         }
     }

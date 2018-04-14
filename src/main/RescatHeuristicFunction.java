@@ -10,9 +10,14 @@ import java.util.ArrayList;
 public class RescatHeuristicFunction implements HeuristicFunction {
 
     private static boolean heuristic2;
+    private static double ponderation = 1;
 
     public static void setHeuristic2(boolean heu) {
         heuristic2 = heu;
+    }
+
+    public static void setPonderation(double ponderation) {
+        RescatHeuristicFunction.ponderation = ponderation;
     }
 
     public double getHeuristicValue(Object n) {
@@ -36,7 +41,7 @@ public class RescatHeuristicFunction implements HeuristicFunction {
             tempsTotal += t[0];
             if (t[1] > tempsP1) tempsP1 = t[1];
         }
-        if (heuristic2) return tempsTotal+tempsP1;
+        if (heuristic2) return tempsTotal+(tempsP1)*ponderation;
         return tempsTotal;
 
     }
