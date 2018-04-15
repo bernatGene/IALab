@@ -5,6 +5,8 @@ import aima.search.framework.Search;
 import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
 
+import java.util.List;
+
 public class MainExp6 {
 
     public static void main(String[] args) throws Exception {
@@ -27,7 +29,7 @@ public class MainExp6 {
         System.out.println("-HILL CLIMBING EXPERIMENT 6-");
         System.out.println("------------------------------------------------");
 
-        numGrups = 250;
+        numGrups = 150;
 
         for (int k = 1; k <= 5; ++k) {
 
@@ -69,11 +71,17 @@ public class MainExp6 {
     }
 
     private static void AreaRescatHillClimbing (AreaRescat area) throws Exception {
-        Problem problem = new Problem(area, new sucexp4(), new RescatGoalTest(),
+        Problem problem = new Problem(area, new RescatSuccessorFunction(), new RescatGoalTest(),
                 new RescatHeuristicFunction());
         Search search = new HillClimbingSearch();
         SearchAgent agent = new SearchAgent(problem, search);
-        //printActions(agent.getActions());
+        printActions(agent.getActions());
+    }
+
+    private static void printActions(List actions) {
+
+        System.out.println((String) actions.get(actions.size()-1));
+
     }
 
 }

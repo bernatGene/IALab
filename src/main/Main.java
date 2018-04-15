@@ -33,12 +33,12 @@ public class Main {
             helisPerCentre = 1;
             AreaRescat area = new AreaRescat( numGrups, numCentres, helisPerCentre, seed );
             area.solucioInicial3();
-            System.out.println( "Inici cronometre..." );
-            long startTime = System.currentTimeMillis();
+
+
             AreaRescatHillClimbing( area );
-            long stopTime = System.currentTimeMillis();
-            AreaRescat.printaUsOperadors();
-            System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
+
+            //AreaRescat.printaUsOperadors();
+
         }
         else {
             System.out.print("Numero de centres?");
@@ -63,15 +63,14 @@ public class Main {
                 area.solucioInicial2();
             else
                 area.solucioInicial3();
-            System.out.println( "Inici cronometre..." );
-            long startTime = System.currentTimeMillis();
+
             if (alg ==0) AreaRescatHillClimbing( area );
             else {
                 AreaRescatSimulatedAnnealing(area);
             }
-            long stopTime = System.currentTimeMillis();
-            AreaRescat.printaUsOperadors();
-            System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
+
+            //AreaRescat.printaUsOperadors();
+
         }
 
 
@@ -92,27 +91,32 @@ public class Main {
         System.out.print("SA: Parametre lambda?");
         l = Double.valueOf(br.readLine());
 
-
+        System.out.println( "Inici cronometre..." );
+        long startTime = System.currentTimeMillis();
         Search search = new SimulatedAnnealingSearch(nIter, IpS, k, l);
         //((SimulatedAnnealingSearch) search).traceOn();
         SearchAgent agent = new SearchAgent(problem, search);
         printActionsSA(agent.getActions());
         printInstrumentation(agent.getInstrumentation());
+        long stopTime = System.currentTimeMillis();
+        System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
     }
 
     private static void AreaRescatHillClimbing(AreaRescat area) throws Exception {
         Problem problem = new Problem( area, new RescatSuccessorFunction(), new RescatGoalTest(),
                 new RescatHeuristicFunction() );
+        long startTime = System.currentTimeMillis();
+        System.out.println( "Inici cronometre..." );
         Search search = new HillClimbingSearch();
         SearchAgent agent = new SearchAgent( problem, search);
         printActions(agent.getActions());
         printInstrumentation(agent.getInstrumentation());
+        long stopTime = System.currentTimeMillis();
+        System.out.println( "Temps: "+(stopTime-startTime)+" ms" );
     }
 
     private static void printActions(List actions) {
-        for (int i = 0; i < actions.size(); i++) {
-            System.out.println((String) actions.get(i));
-        }
+            System.out.println((String) actions.get(actions.size()-1));
     }
 
     private static void printActionsSA(List actions) {

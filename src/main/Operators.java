@@ -20,7 +20,7 @@ public class Operators {
                 for (int k=0; k < helicopters.get(i).size(); ++k) {
                     for (int l=0; l < helicopters.get(j).size(); ++l) {
                         AreaRescat newArea = operadorSwapTrajectes(area, i, j, k, l);
-                        String s = ("Canvio t"+k+" d'Heli"+i+" amb t"+l+" d'Heli"+j+"\n");
+                        String s = ""; // ("Canvio t"+k+" d'Heli"+i+" amb t"+l+" d'Heli"+j+"\n");
                         if (newArea != null) {
                             s += newArea.printaRescatString();
                             AreaRescat.incSwpT();
@@ -53,7 +53,7 @@ public class Operators {
                 for (int k = j + 1; k < helicopter.size(); ++k) {
                     for (int l = 0; l < 3; ++l) {
                         for (int m = 0; m < 3; ++m) {
-                            String S = "En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
+                            String S = ""; // "En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
                             AreaRescat newArea = operadorSwapGrups(area, i, i, j, k, l, m);
                             if (newArea != null) {
                                 S += newArea.printaRescatString();
@@ -81,7 +81,7 @@ public class Operators {
                     for (int k = j + 1; k < helicopter2.size(); ++k) {
                         for (int l = 0; l < 3; ++l) {
                             for (int m = 0; m < 3; ++m) {
-                                String S = "En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
+                                String S = ""; //"En l'Heli" + i + " canvio G" + l + " de T" + j + " amb G" + m + " de T" + k + " ";
                                 AreaRescat newArea = operadorSwapGrups(area, n, i, j, k, l, m);
                                 if (newArea != null) {
                                     S += newArea.printaRescatString();
@@ -119,7 +119,7 @@ public class Operators {
             for (int j=i+1; j < helicopters.size(); ++j){
                 for (int k=0; k < helicopters.get(i).size(); ++k) {
                     AreaRescat newArea = operadorMoureTrajecte(area, i, j, k);
-                    String s = ("Moc t"+k+" d'Heli"+i+" a Heli"+j+"\n");
+                    String s = ""; // = ("Moc t"+k+" d'Heli"+i+" a Heli"+j+"\n");
                     if (newArea != null) {
                         s += newArea.printaRescatString();
                         AreaRescat.incMouT();

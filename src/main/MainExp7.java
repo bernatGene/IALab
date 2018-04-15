@@ -91,19 +91,27 @@ public class MainExp7 {
         */
 
         seed = 1234;
+        RescatHeuristicFunction.setHeuristic2(false);
+        area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
+        area.solucioInicial3();
+        RescatHeuristicFunction.setPonderation(1);
+        //AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
+        //System.out.println("-----------------------------------------------");
+        AreaRescatHillClimbing(area);
+        seed = 1234;
         RescatHeuristicFunction.setHeuristic2(true);
         area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
         area.solucioInicial3();
         RescatHeuristicFunction.setPonderation(1);
-        AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
-        System.out.println("------------------------------------------------");
-        for (int k=1; k < 10; ++k) {
+        AreaRescatHillClimbing(area);
+        //System.out.println("------------------------------------------------");
+        for (int k=1; k < 100; ++k) {
             RescatHeuristicFunction.setHeuristic2(true);
             area = new AreaRescat(numGrups, numCentres, helisPerCentre, seed);
             area.solucioInicial3();
             RescatHeuristicFunction.setPonderation(k*2);
-            AreaRescatSimulatedAnnealing(area, 10000, 100, 5, 0.001);
-            System.out.println("------------------------------------------------");
+            AreaRescatHillClimbing(area);
+            //System.out.println("------------------------------------------------");
         }
 
 
@@ -130,16 +138,14 @@ public class MainExp7 {
     }
 
     private static void AreaRescatHillClimbing(AreaRescat area) throws Exception {
-        Problem problem = new Problem( area, new sucexp4(), new RescatGoalTest(),
+        Problem problem = new Problem( area, new RescatSuccessorFunction(), new RescatGoalTest(),
                 new RescatHeuristicFunction() );
         Search search = new HillClimbingSearch();
         SearchAgent agent = new SearchAgent( problem, search);
-        //printActions(agent.getActions());
+        printActions(agent.getActions());
     }
 
     private static void printActions(List actions) {
-        for (int i = 0; i < actions.size(); i++) {
-            System.out.println((String) actions.get(i));
-        }
+        System.out.println((String) actions.get(actions.size()-1));
     }
 }
