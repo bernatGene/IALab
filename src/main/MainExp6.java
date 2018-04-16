@@ -27,9 +27,9 @@ public class MainExp6 {
         System.out.println("-HILL CLIMBING EXPERIMENT 6-");
         System.out.println("------------------------------------------------");
 
-        numGrups = 250;
+        numGrups = 100;
 
-        for (int k = 1; k <= 5; ++k) {
+        for (int k = 1; k <= 20; ++k) {
 
             numCentres = 5*k;
             helisPerCentre = 1;
